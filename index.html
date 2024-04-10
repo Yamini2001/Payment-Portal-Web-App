@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment UI Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="index.js"></script>
+</head>
+<body>
+<header>
+  <div class="container-fluid bg-light p-1 rounded-pill shadow-sm d-flex justify-content-between align-items-center">
+    <div class="buttons">
+      <button class="btn btn-light rounded-pill dropdown-toggle d-flex align-items-center custom-btn me-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="newBusinessBtn">
+        <i class="fas fa-business-time" style="margin-right: 5px;"></i> New Business
+      </button>
+      <button class="custom-btn d-flex align-items-center" style="margin-left: 30px;">
+        Activate Account <i class="fas fa-arrow-right" style="margin-left: 5px;"></i>
+      </button>
+    </div>
+  <div class="col-md-3 search-bar mt-1">
+    <!-- Search bar -->
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search...">
+  </div>
+  </div>
+  <div class="col-md-3 d-flex align-items-center">
+    <div class="input-group mr-3 mt-3" style="white-space: nowrap;margin-left:20px;">
+      <button class="btn btn-light create-btn" type="button">Create <i class="fas fa-chevron-down"></i> </button>
+      </div>
+  <div class="input-group mt-3">
+    <span class="help-button d-flex align-items-center" style="background-color: grey; color: white; padding: 5px; border-radius: 50%;font-weight: bold;">
+      <i class="fas fa-question-circle"></i>
+      &nbsp;Help
+    </span>
+  </div>
+    <div class="icons-container d-flex align-items-center">
+      <i class="fas fa-bell fa-lg ml-4 mt-2 other-icons"></i>
+      <i class="fas fa-cog fa-lg ml-3 mt-2 other-icons"></i>
+      <i class="fas fa-user fa-lg ml-3 mt-2 other-icons"></i>
+    </div>
+  </div>
+</div> 
+</header>
+
+<!-- Horizontal Navbar -->
+<nav class="navbar navbar-expand-lg navbar-white bg-white">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Payments</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Balances</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Customers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Reports</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Connect</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link dev-button" href="#">Developers</a>
+      </li>
+      <li class="nav-item">
+        <label class="nav-link btn dev-btn1 mt-2" id="testModeButton">Test Mode</label> <!-- Test Mode text -->
+      </li>
+      <li class="nav-item">
+        <div class="custom-control custom-switch fa-lg ml-4 mt-3">
+          <input type="checkbox" class="custom-control-input" id="testModeSwitch">
+          <label class="custom-control-label" data-onstyle="warning" for="testModeSwitch"></label> <!-- Toggle Switch -->
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<!-- Create a border line  -->
+<div class="border-line"></div>
+
+<div class="container mt-3">
+  <div class="text-center">
+    <button class="btn btn-orange">TEST DATA</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <nav class="navbar1 navbar-light bg-light">
+        <h1 class="title">Payments</h1>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" onclick="toggleColor(this)">All payments</a>
+          </li>
+          <ul class="navbar-nav flex-md-column ml-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#">All transactions</a>
+            </li>
+          </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="toggleColor(this)">Fraud & risk</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="toggleColor(this)">Invoices</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="toggleColor(this)">Subscriptions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="toggleColor(this)">Quotes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="toggleColor(this)" style="white-space: nowrap;">Payment Links</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+ <!-- "Payments" Heading -->
+  <div class="container">
+  <div class="col-md-12">
+  <h2 class="h2">Payments</h2>
+</div> 
+<div class="col-md-6 text-right" id="button-container" style="margin-left:762px;margin-top: -42px;">
+  <button class="btn btn-light mx-2" id="filter-btn">
+    <i class="fas fa-filter"></i> Filter</button>
+  <button class="btn btn-light mx-2">
+    <i class="bi bi-arrow-up-right" id="export-btn"></i> Export </button>
+  <button class="btn btn-primary mx-2" id="create-payment-btn">
+  <i class="fas fa-plus"></i> Create Payment 
+  <i class="fas fa-user" style="border: 1px solid white;opacity: 0.5px;position:relative"></i>
+  </button>
+</div>
+<div class="col-md-12 text-right">
+  <nav class="navbarh navbar-expand-sm navbar-light">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="#">All</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Succeeded</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Refunded</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Uncaptured</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>
+
+<!-- Horizontal Navbar -->
+<div class="container mt-3">
+  <!-- First navbar -->
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <nav class="navbar navbar-expand-sm navbar-light">
+        <ul class="nav nav-pills1">
+          <li class="nav-item" style="margin-left:-230px;margin-top: 6px;font-weight: bold;">
+            <input type="checkbox" id="roundCheckbox">
+            <label for="roundCheckbox"> </label>
+          </li>
+          <li class="nav-item" style="margin-left:10px;font-weight: bold;">
+            Amount
+          </li>
+          <li class="nav-item" style="margin-left:195px;font-weight: bold;">
+            Description
+          </li>
+          <li class="nav-item" style="margin-left:755px;margin-top:-30px;font-weight: bold;">
+            Customer
+          </li>
+          <li class="nav-item" style="margin-left:1055px;margin-top:-30px;font-weight: bold;">
+           Date
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <hr style="border: -1px solid black; margin-top: 10px; margin-bottom: 1px;margin-left:50px;width:120%">
+
+  <div class="container mt-3">
+    <!-- Second navbar -->
+    <div class="row">
+      <div class="col-md-12 text-right">
+        <nav class="navbar navbar-expand-sm navbar-light">
+          <ul class="nav nav-pills1">
+            <li class="nav-item" style="margin-left:-245px;margin-top: 4px;">
+              <input type="checkbox" id="roundCheckbox1">
+              <label for="roundCheckbox"> </label>
+            </li>
+            <li class="nav-item" style="margin-left:30px;font-weight: bold;">
+              ₹ 0.50
+            </li>
+            <li class="nav-item" style="margin-left:12px;">
+              INR
+            </li>
+            <li class="nav-item" style="margin-left:30px;margin-top:-2px;font-weight: bold;">
+              <span style="background-color: lightgreen; color: darkgreen; padding: 2px; border-radius: 5px;font-weight: bold;">Succeeded ✓</span>
+              </li>
+            <li class="nav-item" style="margin-left:20px;margin-top:-4px;">
+            Test
+            </li>
+            <li class="nav-item" style="margin-left:1000px;margin-top:-30px;;white-space: nowrap;">
+              Nov 12, 5:30 PM
+              </li>
+              <li class="nav-item" style="margin-left: 1140px;margin-top: -30px;">
+                <i class="fas fa-ellipsis-h" id="ellipsis2" style="margin-right: 10px;margin-bottom: 10px;"></i> 
+                <i class="fas fa-arrow-left" id="left-arrow2" style="display: none;"></i>
+                <i class="fas fa-envelope" id="mail-icon2" style="display: none;"></i>
+            </li>
+             <div id="box-container2" style="display: none;">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div> 
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <hr style="border: -1px solid black; margin-top: 10px; margin-bottom: 6px;margin-left:50px;width:120%">
+
+    <div class="container mt-3">
+      <!-- Third navbar -->
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <nav class="navbar navbar-expand-sm navbar-light">
+            <ul class="nav nav-pills1">
+              <li class="nav-item" style="margin-left:-261px;margin-top: 4px;">
+                <input type="checkbox" id="roundCheckbox2">
+                <label for="roundCheckbox"> </label>
+              </li>
+              <li class="nav-item" style="margin-left:30px;font-weight: bold;">
+                ₹ 0.50
+              </li>
+              <li class="nav-item" style="margin-left:12px;">
+                INR
+              </li>
+              <li class="nav-item" style="margin-left:30px;margin-top:-2px;font-weight: bold;">
+                <span style="background-color: lightgreen; color: darkgreen; padding: 2px; border-radius: 5px;font-weight: bold;">Succeeded ✓</span>
+                </li>
+              <li class="nav-item" style="margin-left:20px;margin-top:-4px;">
+              Test
+              </li>
+              <li class="nav-item" style="margin-left:980px;margin-top:-30px;white-space: nowrap;">
+                Nov 12, 7:26 PM
+                </li>
+                <li class="nav-item" style="margin-left: 1125px;margin-top: -35px;">
+                  <i class="fas fa-ellipsis-h" id="ellipsis3" style="margin-right: 10px;margin-bottom: 10px;"></i> 
+                  <i class="fas fa-arrow-left" id="left-arrow3" style="display: none;"></i>
+                  <i class="fas fa-envelope" id="mail-icon3" style="display: none;"></i>
+              </li>
+               <div id="box-container3" style="display: none;">
+                  <div class="box"></div>
+                  <div class="box"></div>
+                  <div class="box"></div>
+              </div> 
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <hr style="border: -1px solid black; margin-top: 10px; margin-bottom: 6px;margin-left:50px;width:120%">
+
+      <div class="container mt-3">
+        <!-- Fourth navbar -->
+        <div class="row">
+          <div class="col-md-12 text-right">
+            <nav class="navbar navbar-expand-sm navbar-light">
+              <ul class="nav nav-pills1">
+                <li class="nav-item" style="margin-left:-276px;margin-top: 4px;">
+                  <input type="checkbox" id="roundCheckbox3">
+                  <label for="roundCheckbox"> </label>
+                </li>
+                <li class="nav-item" style="margin-left:30px;font-weight: bold;">
+                  ₹ 0.50
+                </li>
+                <li class="nav-item" style="margin-left:12px;">
+                  INR
+                </li>
+                <li class="nav-item" style="margin-left:30px;margin-top:-2px;font-weight: bold;">
+                  <span style="background-color: lightgreen; color: darkgreen; padding: 2px; border-radius: 5px;font-weight: bold;">Succeeded ✓</span>
+                  </li>
+                <li class="nav-item" style="margin-left:20px;margin-top:-4px;">
+                Test
+                </li>
+                <li class="nav-item" style="margin-left:965px;margin-top:-30px;;white-space: nowrap;">
+                  Nov 12, 6:43 PM
+                  </li>
+                  <li class="nav-item" style="margin-left: 1110px;margin-top: -35px;">
+                    <i class="fas fa-ellipsis-h" id="ellipsis4" style="margin-right: 10px;margin-bottom: 10px;"></i> 
+                    <i class="fas fa-arrow-left" id="left-arrow4" style="display: none;"></i>
+                    <i class="fas fa-envelope" id="mail-icon4" style="display: none;"></i>
+                </li>
+                 <div id="box-container4" style="display: none;">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div> 
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <hr style="border: -1px solid black; margin-top: 10px; margin-bottom: 6px;margin-left:50px;width:120%">
+
+
+        <div class="container mt-3">
+          <!-- Fifth navbar -->
+          <div class="row">
+            <div class="col-md-12 text-right">
+              <nav class="navbar navbar-expand-sm navbar-light">
+                <ul class="nav nav-pills1">
+                  <li class="nav-item" style="margin-left:-292px;margin-top: 4px;">
+                    <input type="checkbox" id="roundCheckbox4">
+                    <label for="roundCheckbox"> </label>
+                  </li>
+                  <li class="nav-item" style="margin-left:30px;font-weight: bold;">
+                    ₹ 0.50
+                  </li>
+                  <li class="nav-item" style="margin-left:12px;">
+                    INR
+                  </li>
+                  <li class="nav-item" style="margin-left:30px;margin-top:-2px;font-weight: bold;">
+                    <span style="background-color: lightgreen; color: darkgreen; padding: 2px; border-radius: 5px;font-weight: bold;">Succeeded ✓</span>
+                    </li>
+                  <li class="nav-item" style="margin-left:20px;margin-top:-4px;">
+                  Test
+                  </li>
+                  <li class="nav-item" style="margin-left:945px;margin-top:-30px;;white-space: nowrap;">
+                    Nov 12, 5:30 PM
+                    </li>
+                    <li class="nav-item" style="margin-left: 1095px;margin-top: -35px;">
+                      <i class="fas fa-ellipsis-h" id="ellipsis5" style="margin-right: 10px;margin-bottom: 10px;"></i> 
+                      <i class="fas fa-arrow-left" id="left-arrow5" style="display: none;"></i>
+                      <i class="fas fa-envelope" id="mail-icon5" style="display: none;"></i>
+                  </li>
+                   <div id="box-container5" style="display: none;">
+                      <div class="box"></div>
+                      <div class="box"></div>
+                      <div class="box"></div>
+                  </div> 
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <hr style="border: -1px solid black; margin-top: 10px; margin-bottom: 8px;margin-left:50px;width:120%">
+
+          <div class="navbar-row">
+            <div class="result">
+              <span>4 results</span>
+            </div>
+            <div class="button">
+              <button type="button" class="btn btn-light">Previous</button>
+              <button type="button" class="btn btn-light">Next</button>
+            </div>
+          </div>
+<!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-XXX" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</body>
+</html>

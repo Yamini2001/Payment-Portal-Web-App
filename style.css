@@ -1,0 +1,345 @@
+.container-fluid {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 1px;
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.075); /* Subtle shadow */
+  display: flex; /* Allow flexbox for horizontal alignment */
+  justify-content: space-between; /* Align items horizontally at opposite ends */
+  align-items: center; /* Align items vertically in the center */
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-start; /* Wrap buttons in a flexbox container */
+}
+
+.custom-btn {
+  background-color: rgb(215, 189, 141); /* White background */
+  color: brown;  /* Black text */
+  border: none;
+  border-radius: 20px; /* Rounded corners for buttons */
+  padding: 5px 10px;  /* Adjust padding as needed */
+  margin: 0; /* Reset default margin */
+  font-weight: bold;
+  /* Consider adding a hover style for visual feedback on interaction */
+  /* Ex: .custom-btn:hover { background-color: #f5f5f5; } */
+}
+/* Add this CSS to style the active state of the button */
+.navbar-nav .nav-item {
+  margin-right: 10px; /* Add space between each navbar item */
+}
+.custom-btn.me-2 {
+  margin-left: 12px; /* Right margin for the first button */
+  background-color: white;
+  color:black;
+  font-weight: 400;
+}
+.custom-btn:not(.me-2) { /* Target the "Activate Account" button */
+  padding-left: 15px; /* Adjust the padding value as needed */
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 5px;
+  width: 500px;
+  margin-right:40px !important;
+}
+
+.search-box i {
+  margin-right: 5px;
+}
+
+.search-box input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px; /* Increase font size */
+    width: 300px; /* Set desired width */
+}
+
+.create-btn {
+  background-color: #fff; /* White background on initial state */
+  color: black; /* Black text on initial state */
+  border: 1px solid blue; /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  margin-top: -10px;
+  margin-left: -63px;
+  /* Adjust padding and other styles as needed */
+}
+
+.create-btn:hover {
+  background-color: white; /* Blue background on hover */
+  color: black; /* White text on hover */
+  border-color: #007bff; /* Blue border on hover */
+}
+.help-button {
+  /* Existing styles from your code */
+  margin-right: 290px; /* Remove margin-right to align left */
+  margin-top: -12px;
+}
+.icons-container {
+  /* Flexbox settings */
+  display: flex;
+  align-items: center;
+
+  /* Margin and padding */
+  margin-left: -270px; /* Adjust margin-left as needed */
+}
+
+.icons-container .other-icons {
+  /* Adjust margin between icons */
+  margin-right: 25px; /* Adjust margin-right as needed */
+}
+
+/* Style for the horizontal navbar */
+.navbar {
+  border-radius: 20px; /* Add rounded corners */
+  margin-right:440px;
+}
+
+/* Style for the toggler icon */
+.navbar-toggler {
+  border: 1px solid white; /* Remove border */
+  border-radius: 10px;
+  background-color:blue;
+  color: white;
+  font-weight:bold;
+}
+
+/* Style for the dropdown toggle */
+.dropdown-toggle::after {
+  margin-left: 0.5rem; /* Adjust spacing between text and icon */
+}
+
+/* Style for the dropdown menu */
+.dropdown-menu {
+  border-radius: 5px; /* Add rounded corners */
+}
+
+/* Style for the dropdown items */
+.dropdown-item {
+  color: black; /* Set text color */
+}
+.navbar{
+  margin-left:-5px;
+}
+
+/* Style for the active link */
+.navbar-nav .nav-item .nav-link  {
+  background-color: white !important;
+  color: black !important;
+  border-radius: 30px; /* Adjust the border-radius to make buttons slightly round */
+  padding-left: 10px; /* Adjust the padding to add space inside the buttons */
+  padding-right: 10px;
+}
+.navbar-nav .nav-item .nav-link:active {
+  background-color: blue !important; /* Change background color to blue when clicked */
+  color: white !important; /* Change text color to white when clicked */
+}
+
+/* Style for the Test Mode switch */
+.form-check {
+  margin-bottom: 0; /* Remove margin bottom */
+}
+
+.dev-button{
+  font-weight: bolder;
+  margin-left:440px;
+  margin-top: 9px;
+  color: black;
+}
+.dev-btn1 {
+      white-space: nowrap;
+}
+
+.custom-control-input:checked + .custom-control-label::before {
+  /* Light orange color for "on" state */
+  background-color: #e1ac77; /* Adjust as needed */
+}
+
+.custom-control-label {
+  /* Adjust size and padding as needed */
+  width: 50px;
+  height: 28px;
+  padding: 2px;
+}
+
+.custom-control-label::before {
+  /* Style switch knob */
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 40%;
+  transition: background-color 0.3s ease;
+}
+
+.border-line {
+  border-bottom: 1px solid orange;
+  margin-bottom: 20px; /* Add margin below the border line */
+}
+.btn-orange {
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  border: none; /* Remove default button border */
+  padding: 3px 15px; /* Adjust padding as needed */
+  border-radius: 5px; /* Add border radius */
+  display: block; /* Make button a block element */
+  margin-top: -20px;
+  margin-left:400px;
+}
+
+
+/* Style for the title */
+.title {
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-weight: bold; /* Set font weight to bold */
+  margin-bottom: 1rem; /* Add some margin below the title */
+}
+
+/* Style for navbar links */
+.nav-link {
+  background-color: white; /* Set background color for the links */
+  color: black; /* Set text color for the links */
+  font-weight: bold; /* Set font weight to bold */
+  border-radius: 0; /* Remove border radius */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Style for navbar links on hover */
+.nav-link:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+/* Style for active link */
+.nav-link.active {
+  background-color: blue; /* Set background color for the active link */
+  color: white; /* Set text color for the active link */
+}
+
+.navbar1 {
+  height: 400px; /* Adjust height as needed */
+  border-radius: 5px; /* Add rounded corners */
+  padding: 10px; /* Optional padding for content */
+  margin-left: -20px;
+}
+
+.col-md-2 {
+  padding-left: 10px;  /* Adjust value as needed */
+  margin-left: -150px;
+}
+
+.navbar1 .nav-link {
+  color: black;
+  margin-bottom: 10px; /* Add spacing between links */
+  font-weight: bold;
+  position: relative; /* Set position to relative for pseudo-element positioning */
+}
+
+.navbar1 .nav-link.active {
+  background-color: white; /* Blue color on click */
+  color: blue; /* White text on click */
+}
+
+.navbar1 .nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: -10px; /* Adjust the position of the blue line */
+  top: 0;
+  width: 4px; /* Adjust the width of the blue line */
+  height: 100%; /* Set the height to cover the entire button */
+  background-color: blue; /* Set the color of the blue line */
+  border-radius: 5px; /* Add rounded corners to the blue line */
+}
+
+/* Styles for "Payments" Heading */
+.h2{
+  margin-top: -400px;
+  margin-left: 50px;
+  font-size: 35px;
+}
+/* Styles for navbar */
+.navbarh {
+  background-color: white; /* Set background color */
+  margin-left: 38px;
+}
+
+.nav-pills .nav-link {
+  color: black; /* Set text color */
+  border-bottom: 2px solid transparent; /* Add transparent bottom border */
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .nav-link:hover {
+  background-color: white; /* Set background color for active/hovered link */
+  color: #007bff; /* Set text color for active/hovered link */
+  border-bottom-color: #007bff; /* Set color for bottom border */
+}
+
+/* Style for the checkbox */
+.navbar .nav-item input[type="checkbox"] {
+  appearance: none;
+  border-radius: 30%; 
+  border: 1px solid #000; 
+  width: 20px; 
+  height: 20px;
+  margin-top: -32px;
+  margin-left: 280px;
+}
+
+/* Style for the light border line */
+.navbarh::after {
+  content: ""; /* Create pseudo-element */
+  display: block; /* Display as block element */
+  width: 120%; /* Full width */
+  height: 1px; /* Set height of the border line */
+  background-color: #ccc; /* Set color of the border line */
+  margin-top: 2px; /* Adjust margin as needed */
+}
+/* Style for the light border line */
+.navbar-light-border::after {
+  content: ""; /* Create pseudo-element */
+  display: block; /* Display as block element */
+  width: 100%; /* Full width */
+  height: 2px; /* Set height of the border line */
+  background-color: #ccc; /* Set color of the border line */
+  margin-top: -14px; /* Adjust margin as needed */
+}
+.navbar-container {
+  border-bottom: 1px solid black;
+  margin-bottom: 20px; /* Adjust spacing if needed */
+}
+.navbar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-top: 30px;
+  white-space: nowrap;
+}
+
+.result {
+  display: inline;
+}
+
+.button {
+  display: flex;
+  margin-left: 880px;
+  margin-top: -12px;
+  margin-right: 12px;
+}
+
+.button button {
+  margin-left: 10px;
+}
+
